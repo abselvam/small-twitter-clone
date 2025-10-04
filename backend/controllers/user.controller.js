@@ -133,7 +133,7 @@ export const updateUser = async (req, res) => {
             profileImg = uploadedResponse.secure_url
         }
         if(coverImg){
-            if(user.profileImg){
+            if(user.coverImg){
                 await cloudinary.uploader.destroy(user.coverImg.split("/").pop().split(".")[0])
             }
             const uploadedResponse = await cloudinary.uploader.upload(coverImg)
